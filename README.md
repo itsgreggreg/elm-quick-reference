@@ -9,11 +9,11 @@ Try Elm Online: http://elm-lang.org/try<br>
 This Document: https://github.com/itsgreggreg/elm_quick_reference/<br>
 
 - [Ports](#ports)
-  - [incoming](#incoming)
-  - [outgoing](#outgoing)
+  - [inbound](#inbound)
+  - [outbound](#outbound)
   
 ## Ports
 __Ports__ are Elm's mechanism for interacting with Javascript. Any communication with Javascript must happen through a __port__
-### Incoming
+### Inbound
 
-### Outgoing
+### Outbound
