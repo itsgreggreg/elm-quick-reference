@@ -50,6 +50,8 @@ This Document: https://github.com/itsgreggreg/elm_quick_reference/<br>
  - Can be concatenated with `++`
  - Elm does not have string interpolation
  - Are not collections of characters
+ 
+
 ```elm
 > "Hello"
 "Hello" : String
@@ -57,6 +59,14 @@ This Document: https://github.com/itsgreggreg/elm_quick_reference/<br>
 "Hello Elm" : String
 > String.length "Hello Elm"
 9 : Int
+```
+#### Warnings :
+ - Do not properly handle Unicode
+```elm
+> String.length "hat: 🎩"
+7 : Int !! <- Sholud be 6
+> String.toList "🎩"
+['�','�'] : List Char !! <- Should be ['🎩']
 ```
 
 ## Collection Types
