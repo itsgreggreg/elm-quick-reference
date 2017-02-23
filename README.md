@@ -71,6 +71,8 @@ This Document: https://github.com/itsgreggreg/elm_quick_reference/<br>
 7 : Int !! <- Sholud be 6
 > String.toList "🎩"
 ['�','�'] : List Char !! <- Should be ['🎩']
+> String.reverse "🎩"
+"��" : String !! <- Should be "🎩"
 ```
 
 ## Collection Types
