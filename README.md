@@ -68,7 +68,7 @@ This Document: https://github.com/itsgreggreg/elm_quick_reference/<br>
  - Do not properly handle Unicode
 ```elm
 > String.length "hat: 🎩"
-7 : Int !! <- Sholud be 6
+7 : Int !! <- Should be 6
 > String.toList "🎩"
 ['�','�'] : List Char !! <- Should be ['🎩']
 > String.reverse "🎩"
