@@ -14,6 +14,7 @@ This Document: https://github.com/itsgreggreg/elm_quick_reference/<br>
  - [Int](#int)
  - [String](#string)
  - [Char](#char)
+ - [Bool](#bool)
 - [Collection Types](#collection_types)
 - [Ports](#ports)
   - [inbound](#inbound)
@@ -74,6 +75,21 @@ This Document: https://github.com/itsgreggreg/elm_quick_reference/<br>
 > String.reverse "🎩"
 -- "��" : String !! <- Should be "🎩"
 ```
+
+### Char
+ - Can be expressed literally as: `'<character>'`
+ - Are returned from String methods that work on single characters like `uncons` and `map`.
+ - Generally work with unicode.
+ 
+```elm
+> String.map Char.toUpper "hello"
+-- "HELLO" : String
+> (Char.fromCode <| Char.toCode '🎩') == '🎩'
+-- True : Bool
+```
+
+# Bool
+ - Can be expressed literally as: `True` or `False`
 
 ## Collection Types
 
