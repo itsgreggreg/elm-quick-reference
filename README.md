@@ -17,8 +17,8 @@ This Document: https://github.com/itsgreggreg/elm_quick_reference/<br>
 
 ## Basic Types
 ### Float
- - Must follow the format of `digit(s)`-`decimal`-`digit(s)`
- - Can have an exponent
+ - Can be expressed literally as `<digit(s)>.<digit(s)>[e<digit(s)>]`
+ - Can have an optional exponent
 ```elm
 > 1.5
 1.5 : Float
