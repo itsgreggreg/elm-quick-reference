@@ -25,11 +25,11 @@ This Document: https://github.com/itsgreggreg/elm_quick_reference/<br>
  - Can have an optional exponent
 ```elm
 > 1.5
-1.5 : Float
+# 1.5 : Float
 > 1.5e10
-15000000000 : Float
+# 15000000000 : Float
 > .5
-! Syntax Error
+# !! Syntax Error
 ```
 
 ### Int
