@@ -38,13 +38,13 @@ This Document: https://github.com/itsgreggreg/elm_quick_reference/<br>
  - When returned from a function, are considered `Int`s and cannot take the place of a `Float`
 ```elm
 > 5
-5 : number
+-- 5 : number
 > round(5)
-5 : Int
+-- 5 : Int
 > 5 / 2
-2.5 : Float
+-- 2.5 : Float
 > (round 5) / (round 2)
-! Type Mismatch, expecting Float, got Int
+-- ! Type Mismatch, expecting Float, got Int
 ```
 
 ### String
@@ -58,21 +58,21 @@ This Document: https://github.com/itsgreggreg/elm_quick_reference/<br>
 
 ```elm
 > "Hello"
-"Hello" : String
+-- "Hello" : String
 > "Hello" ++ "Elm"
-"Hello Elm" : String
+-- "Hello Elm" : String
 > String.length "Hello Elm"
-9 : Int
+-- 9 : Int
 ```
 #### Warnings :
  - Do not properly handle Unicode
 ```elm
 > String.length "hat: 🎩"
-7 : Int !! <- Should be 6
+-- 7 : Int !! <- Should be 6
 > String.toList "🎩"
-['�','�'] : List Char !! <- Should be ['🎩']
+-- ['�','�'] : List Char !! <- Should be ['🎩']
 > String.reverse "🎩"
-"��" : String !! <- Should be "🎩"
+-- "��" : String !! <- Should be "🎩"
 ```
 
 ## Collection Types
