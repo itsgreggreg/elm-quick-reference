@@ -17,7 +17,7 @@ This Document: https://github.com/itsgreggreg/elm_quick_reference/<br>
 
 ## Basic Types
 ### Float
- - Can be expressed literally as `<digit(s)>.<digit(s)>[e<digit(s)>]`
+ - Can be expressed literally as: `<digit(s)>.<digit(s)>[e<digit(s)>]`
  - Can have an optional exponent
 ```elm
 > 1.5
@@ -29,7 +29,7 @@ This Document: https://github.com/itsgreggreg/elm_quick_reference/<br>
 ```
 
 ### Int
- - Must follow the format of `digit(s)`.
+ - Can be expressed literally as: `digit(s)`.
  - When input directly, are considered a `number` until used, meaning they can take the place of a `Float`
  - When returned from a function, are considered `Int`s and cannot take the place of a `Float`
 ```elm
@@ -43,6 +43,21 @@ This Document: https://github.com/itsgreggreg/elm_quick_reference/<br>
 ! Type Mismatch, expecting Float, got Int
 ```
 
+### String
+ - Can be expressed literally as: `"<characters>"`
+ - Can be multiline if surrounded in: `"""`
+ - Can be pattern-matched on whole string only
+ - Can be concatenated with `++`
+ - Elm does not have string interpolation
+ - Are not collections of characters
+```elm
+> "Hello"
+"Hello" : String
+> "Hello" ++ "Elm"
+"Hello Elm" : String
+> String.length "Hello Elm"
+9 : Int
+```
 
 ## Collection Types
 
