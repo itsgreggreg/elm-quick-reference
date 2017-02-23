@@ -6,6 +6,7 @@ Elm Website: http://elm-lang.org/<br>
 Elm Api Documentation: http://package.elm-lang.org/packages/elm-lang/core/latest/<br>
 Elm Core Source: https://github.com/elm-lang/core<br>
 Try Elm Online: http://elm-lang.org/try<br>
+Online Elm IDE: https://ellie-app.com/new
 This Document: https://github.com/itsgreggreg/elm_quick_reference/<br>
 
 - [Ports](#ports)
