@@ -10,6 +10,10 @@ Online Elm IDE: https://ellie-app.com/new
 This Document: https://github.com/itsgreggreg/elm_quick_reference/<br>
 
 - [Basic Types](#basic_types)
+ - [Float](#float)
+ - [Int](#int)
+ - [String](#string)
+ - [Char](#char)
 - [Collection Types](#collection_types)
 - [Ports](#ports)
   - [inbound](#inbound)
