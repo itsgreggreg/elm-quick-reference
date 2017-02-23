@@ -84,6 +84,7 @@ This Document: https://github.com/itsgreggreg/elm_quick_reference/<br>
 ```elm
 > String.map Char.toUpper "hello"
 -- "HELLO" : String
+-- Note for below, (from|to)Code work with a KeyCode, nothing to do with unicode
 > (Char.fromCode <| Char.toCode '🎩') == '🎩'
 -- True : Bool
 ```
