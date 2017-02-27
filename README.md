@@ -90,7 +90,7 @@ This Document: https://github.com/itsgreggreg/elm_quick_reference/<br>
 ```
 
 #### Warnings :
- - Do not properly handle any Unicode characters that cannot be represented by 1 UTF-16 code unit.
+ - Do not properly handle any Unicode characters that cannot be represented by a single UTF-16 code unit.
 ```elm
 > Char.toCode '🎩'
 -- 55356 : Char.KeyCode !! <- Should be 127913
