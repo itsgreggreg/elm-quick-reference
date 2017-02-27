@@ -49,6 +49,7 @@ This Document: https://github.com/itsgreggreg/elm_quick_reference/<br>
 ```
 
 ### String
+ - UTF-16 encoded
  - Can be expressed literally as: `"<characters>"`
  - Can be multiline if surrounded in: `"""`
  - Can be pattern-matched on whole string only
@@ -60,13 +61,13 @@ This Document: https://github.com/itsgreggreg/elm_quick_reference/<br>
 ```elm
 > "Hello"
 -- "Hello" : String
-> "Hello" ++ "Elm"
--- "Hello Elm" : String
-> String.length "Hello Elm"
--- 9 : Int
+> ""☀★☂☻♞☯☭☢€→☎♫" ++ "♎⇧☮♻⌘⌛☘☊♔♕♖☦♠♣♥♦♂♀"
+-- "☀★☂☻♞☯☭☢€→☎♫♎⇧☮♻⌘⌛☘☊♔♕♖☦♠♣♥♦♂♀" : String
+> String.length "☀★☂☻♞☯☭☢€→☎♫♎⇧☮♻⌘⌛☘☊♔♕♖☦♠♣♥♦♂♀"
+-- 30 : Int
 ```
 #### Warnings :
- - Do not properly handle Unicode
+ - Do not properly handle any Unicode characters that cannot be represented by a single UTF-16 code unit.
 ```elm
 > String.length "hat: 🎩"
 -- 7 : Int !! <- Should be 6
@@ -78,16 +79,25 @@ This Document: https://github.com/itsgreggreg/elm_quick_reference/<br>
 
 ### Char
  - Can be expressed literally as: `'<character>'`
+ - Can also be expressed as a hexidecimal Unicode code point like: `'\x<hex-digit(s)>'`
  - Are returned from String methods that work on single characters like `uncons` and `map`.
- - Generally work with unicode.
- 
+
 ```elm
+> 'M' == '\x4D'
+-- True
 > String.map Char.toUpper "hello"
 -- "HELLO" : String
--- Note for below, (from|to)Code work with a KeyCode, nothing to do with unicode
-> (Char.fromCode <| Char.toCode '🎩') == '🎩'
--- True : Bool
 ```
+
+#### Warnings :
+ - Do not properly handle any Unicode characters that cannot be represented by 1 UTF-16 code unit.
+```elm
+> Char.toCode '🎩'
+-- 55356 : Char.KeyCode !! <- Should be 127913
+> Char.fromCode 55356 == '🎩'
+-- True !! <- Should be false
+```
+
 
 # Bool
  - Can be expressed literally as: `True` or `False`
