@@ -16,6 +16,9 @@ This Document: https://github.com/itsgreggreg/elm_quick_reference/<br>
  - [Char](#char)
  - [Bool](#bool)
 - [Collection Types](#collection_types)
+ - [List](#list)
+ - [Record](#record)
+ - [Dict](#dict)
 - [Ports](#ports)
   - [inbound](#inbound)
   - [outbound](#outbound)
@@ -56,16 +59,17 @@ This Document: https://github.com/itsgreggreg/elm_quick_reference/<br>
  - Can be concatenated with `++`
  - Elm does not have string interpolation
  - Are not collections of characters
- 
+
 
 ```elm
 > "Hello"
 -- "Hello" : String
-> ""☀★☂☻♞☯☭☢€→☎♫" ++ "♎⇧☮♻⌘⌛☘☊♔♕♖☦♠♣♥♦♂♀"
+> "☀★☂☻♞☯☭☢€→☎♫" ++ "♎⇧☮♻⌘⌛☘☊♔♕♖☦♠♣♥♦♂♀"
 -- "☀★☂☻♞☯☭☢€→☎♫♎⇧☮♻⌘⌛☘☊♔♕♖☦♠♣♥♦♂♀" : String
 > String.length "☀★☂☻♞☯☭☢€→☎♫♎⇧☮♻⌘⌛☘☊♔♕♖☦♠♣♥♦♂♀"
 -- 30 : Int
 ```
+
 #### Warnings :
  - Do not properly handle any Unicode characters that cannot be represented by a single UTF-16 code unit.
 ```elm
@@ -99,11 +103,40 @@ This Document: https://github.com/itsgreggreg/elm_quick_reference/<br>
 ```
 
 
-# Bool
+### Bool
  - Can be expressed literally as: `True` or `False`
 
 ## Collection Types
 
+### List
+ - Are written literally as: `[]`, `[<element>,...]`
+ - All elements must have the same type.
+ - Are concatenated with `++`
+ - Are cons'd with `::`
+ - Can be pattern matched on whole list or cons'd parts
+```elm
+ > []
+ -- [] : List a
+ > [4] ++ [3.5]
+ -- [4,3.5] : List Float
+ > 4 :: 3.5 :: []
+ -- [4, 3.5] : List Float
+ > [1, "two"]
+ -- !TYPE MISMATCH
+```
+
+### Record
+ - Are written literally as: `{}`, `{key: value}`
+ - Keys must be named the same way as [variables](#variables)
+ - Values can be of any type
+ - Can be pattern matched on type, individual keys, and exact values
+ - Are updated with the syntax: `{ recordName | key = value}`
+```elm
+> {}
+-- {} : {}
+> {one = "two"}
+-- { one = "two" } : { one : String }
+```
 
 ## Ports
 __Ports__ are Elm's mechanism for interacting with Javascript. Any communication with Javascript must happen through a __port__
