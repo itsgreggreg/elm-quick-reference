@@ -19,6 +19,9 @@ This Document: https://github.com/itsgreggreg/elm_quick_reference/<br>
  - [List](#list)
  - [Record](#record)
  - [Dict](#dict)
+- [Modules](modules)
+- [Functons](functions)
+- [Type Signatures](#type_signatures)
 - [Ports](#ports)
   - [inbound](#inbound)
   - [outbound](#outbound)
@@ -137,6 +140,13 @@ This Document: https://github.com/itsgreggreg/elm_quick_reference/<br>
 > {one = "two"}
 -- { one = "two" } : { one : String }
 ```
+
+## Modules
+
+## Functions
+
+## Type Signatures
+
 
 ## Ports
 __Ports__ are Elm's mechanism for interacting with Javascript. Any communication with Javascript must happen through a __port__
