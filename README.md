@@ -144,7 +144,46 @@ This Document: https://github.com/itsgreggreg/elm_quick_reference/<br>
 ## Modules
 
 ## Functions
+### Named Functions
+ - Can only be defined inside a module
+ - Must always take the exact number of arguments specified
+ - Arguments cannot have default values
+ - May optionally (but strongly recomended) have a type signature
+ - May have a docstyle comment above them
+ - A function body can have only one expression
+ - You may set up intermediate values in a `let` block then place your function body in an `in` block.
+ ```elm
+ -- inside some module
+ 
+{-| This is a doc style comment for greet
+-}
+ greet : String -> String
+ greet name =
+     "Hello " ++ name ++ "!"
+     
+{-| fibonacci takes the number of fibonacci numbers
+to generate
+-}
+fibonacci : Int -> List Int
+fibonacci count =
+    -- a "let" block defines intermediate functions
+    let
+        -- Intermediate functions may have type declarations
+        sumOfFirstTwo : List Int -> Int
+        sumOfFirstTwo =
+            List.sum << List.take 2
 
+        fibs count nums =
+            if count <= 0 then
+                nums
+            else
+                fibs (count - 1) (sumOfFirstTwo nums :: nums)
+    -- an "in" block may contain only 1 expression
+    in
+    fibs (count - 2) [ 1, 1 ]
+        |> List.take count
+ ```
+### Anonymous Functions
 ## Type Signatures
 
 
