@@ -142,6 +142,23 @@ This Document: https://github.com/itsgreggreg/elm_quick_reference/<br>
 ```
 
 ## Modules
+ - Organize code into namespaces
+ - Public functions must be specifically exported
+```elm
+module Math exposing (add)
+ 
+{-| This is a public function,
+it is exposed above -}
+add : Int -> Int -> Int
+add left right =
+    left + right
+   
+{-| This is a private function,
+it is not exposed. -}
+subtract : Int -> Int -> Int
+subtract left right =
+    left - right
+```
 
 ## Functions
 ### Named Functions
