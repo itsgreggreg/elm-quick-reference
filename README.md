@@ -134,11 +134,15 @@ This Document: https://github.com/itsgreggreg/elm_quick_reference/<br>
  - Values can be of any type
  - Can be pattern matched on type, individual keys, and exact values
  - Are updated with the syntax: `{ recordName | key = value}`
+ - Keys cannot be programatically accessed or enumerated
 ```elm
 > {}
 -- {} : {}
 > {one = "two"}
 -- { one = "two" } : { one : String }
+> a = {one = "two"}
+> { a | one = "three"}
+-- { one = "three" } : { one : String }
 ```
 
 ## Modules
